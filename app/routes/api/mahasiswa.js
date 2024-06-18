@@ -1,5 +1,5 @@
 import express from "express";
-import {create, findAll, findOne, update, remove} from "../controllers/mahasiswa.controller.js";
+import {create, findAll, findOne, update, remove} from "../../controllers/mahasiswa.controller.js";
 
 const router = express.Router();
 

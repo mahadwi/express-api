@@ -6,13 +6,13 @@ export const create = (req, res) => {
 
   Mahasiswa.create(req.body)
     .then(() => res.send({messages: 'Data Berhasil Disimpan'}))
-    .catch(err => res.status(500).send({messages: err.messages}));
+    .catch(err => res.status(500).send({messages: err.message}));
 }
 
 export const findAll = (req, res) => {
   Mahasiswa.find()
     .then(data => res.send(data))
-    .catch(err => res.status(500).send({messages: err.messages}));
+    .catch(err => res.status(500).send({messages: err.message}));
 }
 
 export const findOne = (req, res) => {
@@ -20,7 +20,7 @@ export const findOne = (req, res) => {
 
   Mahasiswa.findById(id)
     .then(data => res.send(data))
-    .catch(err => res.status(500).send({messages: err.messages}));
+    .catch(err => res.status(500).send({messages: err.message}));
 }
 
 export const update = (req, res) => {
@@ -34,7 +34,7 @@ export const update = (req, res) => {
       }
       res.send({messages: "Data berhasil diupdate"})
     })
-    .catch(err => res.status(500).send({messages: err.messages}));
+    .catch(err => res.status(500).send({messages: err.message}));
 }
 
 export const remove = (req, res) => {
@@ -46,5 +46,5 @@ export const remove = (req, res) => {
         res.status(404).send({messages: 'Data berhasil dihapus'})
       }
       })
-    .catch(err => res.status(500).send({messages: err.messages}));
+    .catch(err => res.status(500).send({messages: err.message}));
 }
