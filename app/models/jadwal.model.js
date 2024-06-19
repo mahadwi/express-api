@@ -21,15 +21,15 @@ const jadwalSchema = (mongoose) => {
       type: Boolean,
       default: false
     },
-    namaPemesan: {
-      type: String,
-      required: true
-    },
-    kontakPemesan: {
-      type: Number,
-      required: true
-    },
-    catatan: String
+    // namaPemesan: {
+    //   type: String,
+    //   required: true
+    // },
+    // kontakPemesan: {
+    //   type: Number,
+    //   required: true
+    // },
+    // catatan: String
   });
 
   return mongoose.model('Jadwal', schema);

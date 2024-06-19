@@ -1,10 +1,5 @@
 const pemesananModel = (mongoose) => {
   const schema = new mongoose.Schema({
-    lapangan: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Lapangan',
-      required: true
-    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
@@ -23,7 +18,16 @@ const pemesananModel = (mongoose) => {
       type: String,
       enum: ['Pending', 'Confirmed', 'Cancelled'],
       default: 'Pending'
-    }
+    },
+    namaPemesan: {
+        type: String,
+        required: true
+    },
+    kontakPemesan: {
+      type: Number,
+      required: true
+    },
+    catatan: String
   });
 
   return mongoose.model('Pemesanan', schema);
