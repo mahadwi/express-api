@@ -7,193 +7,401 @@
 	},
 	"item": [
 		{
-			"name": "getAllLapangan",
-			"request": {
-				"auth": {
-					"type": "noauth"
+			"name": "Lapangan",
+			"item": [
+				{
+					"name": "getAllLapangan",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/lapangan",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"lapangan"
+							]
+						}
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/lapangan",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"lapangan"
-					]
+				{
+					"name": "InsertLapangan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "namaLapangan",
+									"value": "Bola 2",
+									"type": "text"
+								},
+								{
+									"key": "lokasiLapangan",
+									"value": "Palembang",
+									"type": "text"
+								},
+								{
+									"key": "tipeLapangan",
+									"value": "Natural",
+									"type": "text"
+								},
+								{
+									"key": "ukuranLapangan",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "kapasitasLapangan",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "gambar",
+									"type": "file",
+									"src": "/home/maha-dwi-putra/Pictures/pexels-padrinan-255379.jpg",
+									"disabled": true
+								},
+								{
+									"key": "deskripsi",
+									"value": "lapangan desc",
+									"type": "text"
+								},
+								{
+									"key": "hargaPerSesi",
+									"value": "1000000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/lapangan",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"lapangan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLapangan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/lapangan/667204ad0144b3f39ca15462",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"lapangan",
+								"667204ad0144b3f39ca15462"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLapangan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/lapangan/667204ad0144b3f39ca15462",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"lapangan",
+								"667204ad0144b3f39ca15462"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "InsertLapangan",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
+			"name": "Jadwal Lapangan",
+			"item": [
+				{
+					"name": "getJadwalLapangan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/jadwal",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"jadwal"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "namaLapangan",
-							"value": "Bola 2",
-							"type": "text"
+				{
+					"name": "insertJadwalLapangan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
 						},
-						{
-							"key": "lokasiLapangan",
-							"value": "Palembang",
-							"type": "text"
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"lapanganId\" : \"666bd9b89d12f85cf6feaf1d\",\n      \"date\": \"2024-06-14\",\n      \"startTime\": \"06.00\",\n      \"endTime\": \"10.00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "tipeLapangan",
-							"value": "Natural",
-							"type": "text"
-						},
-						{
-							"key": "ukuranLapangan",
-							"value": "200",
-							"type": "text"
-						},
-						{
-							"key": "kapasitasLapangan",
-							"value": "200",
-							"type": "text"
-						},
-						{
-							"key": "gambar",
-							"type": "file",
-							"src": "/home/maha-dwi-putra/Pictures/pexels-padrinan-255379.jpg",
-							"disabled": true
-						},
-						{
-							"key": "deskripsi",
-							"value": "lapangan desc",
-							"type": "text"
-						},
-						{
-							"key": "hargaPerSesi",
-							"value": "1000000",
-							"type": "text"
+						"url": {
+							"raw": "{{url}}/api/jadwal",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"jadwal"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{url}}/api/lapangan",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"lapangan"
-					]
+				{
+					"name": "deleteJadwal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/jadwal/6672086275f9110dc2118fbd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"jadwal",
+								"6672086275f9110dc2118fbd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJadwalByLapangan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/jadwal/:lapanganId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"jadwal",
+								":lapanganId"
+							],
+							"variable": [
+								{
+									"key": "lapanganId",
+									"value": "666bd9b89d12f85cf6feaf1d"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "getLapangan",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
+			"name": "Pemesanan",
+			"item": [
+				{
+					"name": "getPemesanan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/pemesanan",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pemesanan"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/lapangan/667204ad0144b3f39ca15462",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"lapangan",
-						"667204ad0144b3f39ca15462"
-					]
+				{
+					"name": "insertPemesanan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jadwalId\": \"66722dc10214dc481732d592\",\n    \"namaPemesan\": \"Dwi\",\n    \"kontakPemesan\": \"081271650453\",\n    \"catatan\": \"oke\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/pemesanan",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pemesanan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPemesananById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/pemesanan/:idPemesanan",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pemesanan",
+								":idPemesanan"
+							],
+							"variable": [
+								{
+									"key": "idPemesanan",
+									"value": "667240038aae396b62079466"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "getJadwalLapangan",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/jadwal",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"jadwal"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "insertJadwalLapangan",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n      \"lapangan\" : \"666aab76ac2fe7b339b0c5c8\",\n      \"date\": \"2024-06-14\",\n      \"startTime\": \"06.00\",\n      \"endTime\": \"10.00\",\n      \"namaPemesan\": \"Dwi\",\n      \"kontakPemesan\": \"081271650453\",\n      \"catatan\": \"FULL\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/api/jadwal",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"jadwal"
-					]
-				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "login",
@@ -257,35 +465,6 @@
 					"path": [
 						"api",
 						"register"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "deleteLapangan",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/lapangan/666aab76ac2fe7b339b0c5c8",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"lapangan",
-						"666aab76ac2fe7b339b0c5c8"
 					]
 				}
 			},
